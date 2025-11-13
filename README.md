@@ -170,7 +170,7 @@ Cada módulo tem responsabilidade única seguindo boas práticas de Clean Code.
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/fiis_web.git
+git clone https://github.com/edsondeveza/fiis_web.git
 cd fiis_web
 ```
 
