@@ -1,0 +1,40 @@
+# ---- AMBIENTE VIRTUAL ----
+.venv/
+venv/
+env/
+
+# ---- ARQUIVOS DO POETRY ----
+poetry.lock
+
+# ---- CONFIGURAÇÕES LOCAIS / IDE ----
+.vscode/
+.idea/
+*.code-workspace
+
+# ---- ARQUIVOS DE SISTEMA ----
+.DS_Store
+Thumbs.db
+
+# ---- ARQUIVOS PYTHON ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---- SAÍDAS / EXPORTAÇÕES ----
+*.xlsx
+*.csv
+*.pdf
+
+# ---- LOGS ----
+*.log
+
+# ---- STREAMLIT ----
+.streamlit/
+
+# ---- TEMPORÁRIOS ----
+*.tmp
+*.temp
+
+# ---- CACHE ----
+.cache/
