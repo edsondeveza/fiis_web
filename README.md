@@ -399,7 +399,7 @@ Analista de Suporte Técnico • Desenvolvedor Python
 
 📧 <edsondeveza@hotmail.com>  
 🐙 [GitHub](https://github.com/edsondeveza)  
-💼 [LinkedIn](https://linkedin.com/in/edsondeveza)  
+💼 [LinkedIn](https://linkedin.com/in/edson-deveza)  
 📍 Brasil
 
 ---
