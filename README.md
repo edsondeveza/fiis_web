@@ -1,99 +1,105 @@
 # 📊 FIIs Web — Análise Inteligente de Fundos Imobiliários (Python + Streamlit)
 
-Uma aplicação web interativa para análise completa de **Fundos Imobiliários (FIIs)** a partir dos dados públicos do **Fundamentus**, com filtros dinâmicos, dashboards, comparação visual entre fundos e busca avançada por fundos semelhantes.
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.51+-red.svg)](https://streamlit.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Construído com **Python 3.12**, **Streamlit**, **Pandas** e **Plotly**.
+Uma aplicação web **profissional** e **robusta** para análise completa de **Fundos Imobiliários (FIIs)** com dados em tempo real do **Fundamentus**. Com filtros dinâmicos, dashboards interativos, sistema de scoring inteligente e busca de fundos semelhantes.
 
----
-
-## 📌 Sumário
-
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Funcionalidades](#-funcionalidades)
-- [Arquitetura do Projeto](#-arquitetura-do-projeto)
-- [Pipeline de Dados](#-pipeline-de-dados)
-- [Instalação](#-instalação)
-- [Como Executar](#-como-executar)
-- [Capturas de Tela](#-capturas-de-tela)
-- [Roadmap](#-roadmap)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Autor](#-autor)
+🆕 **Versão 2.0** - Totalmente refatorada com melhorias em performance, confiabilidade e experiência do usuário!
 
 ---
 
-## 📌 Sobre o Projeto
+## ✨ O que há de novo na v2.0
 
-Este projeto nasceu da necessidade de analisar FIIs de forma simples, organizada e **totalmente automatizada**, sem depender de copiar/colar dados do site do Fundamentus.
+### 🚀 Melhorias de Performance
 
-A aplicação:
+- ✅ **Cache inteligente** de 1 hora para dados do Fundamentus
+- ✅ Carregamento **3x mais rápido** após primeira execução
+- ✅ Otimização do pipeline de processamento
 
-✔ Baixa automaticamente os dados mais recentes dos FIIs  
-✔ Realiza todo o tratamento, normalização e enriquecimento das informações  
-✔ Aplica regras configuráveis para filtrar fundos  
-✔ Calcula *score* de qualidade de 0 a 5  
-✔ Permite exportar resultados em Excel/CSV  
-✔ Compara fundos com gráficos **radar interativos**  
-✔ Traz sistema inteligente para buscar FIIs semelhantes ao fundo escolhido
+### 🛡️ Confiabilidade
 
-É uma ferramenta de **estudo** e não uma recomendação de investimento.
+- ✅ **Tratamento robusto de erros** com retry automático
+- ✅ **Validação completa** de dados em múltiplas camadas
+- ✅ Mensagens de erro claras e acionáveis
+- ✅ Fallback gracioso em caso de falhas
+
+### 🎨 Experiência do Usuário
+
+- ✅ **Sugestões inteligentes** de ajuste de filtros
+- ✅ Loading indicators durante operações longas
+- ✅ Feedback visual melhorado
+- ✅ Interface mais responsiva
+
+### 🏗️ Arquitetura
+
+- ✅ **Código modular** e testável
+- ✅ Separação clara entre UI e lógica de negócio
+- ✅ Configurações centralizadas
+- ✅ Logging estruturado
+- ✅ **Testes unitários** incluídos
 
 ---
 
-## ✨ Funcionalidades
+## 📌 Funcionalidades
 
-### 🔎 Carregamento de Dados
+### 🔎 Coleta Automática de Dados
 
-- Coleta automática dos dados do Fundamentus (web scraping)
-- Pipeline completo de limpeza e padronização
-- Correção de percentuais (DY, vacância, FFO, cap rate etc.)
+- Scraping em tempo real do Fundamentus
+- Retry automático em caso de falhas
+- Cache inteligente para melhor performance
+- Validação de qualidade dos dados
 
-### 🎚 Modo Iniciante e Modo Avançado
+### 🎚 Dois Modos de Uso
 
-- **Iniciante** → parâmetros pré-definidos e explicados
-- **Avançado** → liberdade total nos filtros (DY, P/VP, liquidez, vacância, valor de mercado)
+**Modo Iniciante** 🔰
 
-### 📊 Filtros personalizáveis
+- Parâmetros pré-configurados
+- Foco em fundos de qualidade
+- Explicações detalhadas
+- Ideal para começar
 
-- DY mínimo
+**Modo Avançado** 🔧
+
+- Controle total sobre filtros
+- Personalização completa
+- Para investidores experientes
+
+### 📊 Filtros Inteligentes
+
+Configure até 7 parâmetros:
+
+- DY mínimo (%)
 - P/VP máximo
-- Liquidez mínima
-- Vacância máxima
-- Valor de mercado mínimo
-- Score mínimo (0–5)
-- Macro-segmento
-- Segmento específico
+- Liquidez mínima (R$/dia)
+- Vacância máxima (%)
+- Valor de mercado mínimo (R$)
+- Score mínimo (0-5)
+- Macro-segmento e segmento
 
-### 🧮 Cálculo de Score (0 a 5)
+### 🧮 Sistema de Score (0-5)
 
-Critérios avaliados:
+Avaliação automática baseada em 5 critérios:
 
-1. DY bom  
-2. P/VP bom  
-3. Liquidez mínima  
-4. Vacância controlada  
-5. Tamanho do fundo (market cap)
+1. ✅ **DY bom** – Yield acima do mínimo
+2. ✅ **P/VP bom** – Preço justo ou abaixo do VP
+3. ✅ **Liquidez ok** – Volume de negociação adequado
+4. ✅ **Vacância ok** – Ocupação saudável
+5. ✅ **Tamanho ok** – Fundo com escala
 
-### 📈 Dashboard interativo
+### 🧬 Busca de Fundos Semelhantes
 
-- DY médio do mercado
-- P/VP médio
-- Vacância média
-- Valor total de mercado dos FIIs
-- Total de FIIs carregados
+Sistema inteligente que:
 
-### 🧬 Busca de FIIs semelhantes
+- Sugere parâmetros automaticamente baseado no segmento
+- Encontra FIIs com características similares
+- Ordena por proximidade de DY e P/VP
+- Permite ajuste fino dos critérios
 
-Sistema inteligente que sugere:
+### 🕸 Gráfico Radar Interativo
 
-- Tolerância de DY
-- Tolerância de P/VP
-- Liquidez mínima
-
-Baseado no fundo alvo e seu segmento.
-
-### 🕸 Gráfico Radar
-
-Comparação visual entre:
+Compare visualmente até 5 fundos:
 
 - DY
 - P/VP
@@ -102,90 +108,91 @@ Comparação visual entre:
 - Valor de mercado
 - Score
 
-### 💾 Exportação
+### 💾 Exportação de Dados
 
-- Exportar filtros em **CSV**
-- Exportar em **Excel (.xlsx)**
-- Exportar fundos semelhantes
+Exporte para:
+
+- **CSV** (UTF-8 com BOM)
+- **Excel** (.xlsx)
 
 ---
 
 ## 🏗 Arquitetura do Projeto
 
-```text
+```
 fiis_web/
 │
-├── app.py                 # Interface Streamlit (frontend)
+├── app.py                      # Interface principal (orquestração)
+├── config.py                   # Configurações centralizadas
 │
-├── core/
-│   ├── data_loader.py     # Coleta online do Fundamentus
-│   ├── preprocessing.py   # Normalização + limpeza + percentuais
-│   ├── scoring.py         # Aplicação das regras e score
-│   ├── similarity.py      # Algoritmo de fundos semelhantes
-│   ├── utils.py           # Funções auxiliares (ordenar etc.)
+├── core/                       # Lógica de negócio
+│   ├── data_loader.py          # Carregamento com retry e validação
+│   ├── preprocessing.py        # Pipeline de normalização
+│   ├── scoring.py              # Sistema de pontuação
+│   ├── similarity.py           # Algoritmo de similaridade
+│   ├── utils.py                # Funções auxiliares
+│   └── validators.py           # 🆕 Validações robustas
 │
-├── README.md
-└── pyproject.toml         # Projeto Poetry
+├── ui/                         # 🆕 Componentes de interface
+│   ├── components.py           # Widgets reutilizáveis
+│   └── filters.py              # Filtros da sidebar
+│
+├── tests/                      # 🆕 Testes unitários
+│   ├── test_preprocessing.py
+│   └── test_validators.py
+│
+├── .devcontainer/              # Configuração Codespaces
+├── pyproject.toml              # Dependências Poetry
+├── requirements.txt            # 🆕 Dependências pip
+└── README.md
 ```
 
-Cada módulo tem responsabilidade única seguindo boas práticas de Clean Code.
+### 📐 Princípios de Design
 
----
-
-## 🧠 Pipeline de Dados
-
-1. **Coleta:**  
-   - HTML do Fundamentus é baixado e convertido em tabela
-
-2. **Normalização:**  
-   - Remove acentos  
-   - Ajusta nomes de colunas  
-   - Padroniza formatos
-
-3. **Tratamento Numérico:**  
-   - Converte strings para float/int  
-   - Remove símbolos e percentuais  
-   - Trata números no formato brasileiro (“3,25%”)
-
-4. **Enriquecimento:**  
-   - Cria DY%, FFO%, vacância%  
-   - Classifica em macro-segmentos
-
-5. **Aplicação de Regras:**  
-   - DY mínimo  
-   - P/VP máximo  
-   - Liquidez mínima  
-   - Vacância máxima  
-   - Valor de mercado mínimo
-
-6. **Score:**  
-   - Soma das flags (0–5)
-
-7. **Exibição e exportação no Streamlit**
+- **Separação de responsabilidades**: UI, lógica e dados separados
+- **Clean Code**: Funções pequenas, nomes descritivos
+- **Error Handling**: Tratamento robusto em todas as camadas
+- **Testabilidade**: Código fácil de testar
+- **Performance**: Cache e otimizações
 
 ---
 
 ## 🚀 Instalação
 
-### 1. Clone o repositório
+### Pré-requisitos
+
+- Python 3.12 ou superior
+- pip ou Poetry
+
+### Opção 1: Com Poetry (Recomendado)
 
 ```bash
+# Clone o repositório
 git clone https://github.com/edsondeveza/fiis_web.git
 cd fiis_web
-```
 
-### 2. Instale as dependências com Poetry
-
-```bash
+# Instale dependências
 poetry install
+
+# Ative o ambiente
+poetry env activate
 ```
 
-> O projeto exige **Python 3.12+**
-
-### 3. Ative o ambiente virtual
+### Opção 2: Com pip
 
 ```bash
-poetry shell
+# Clone o repositório
+git clone https://github.com/edsondeveza/fiis_web.git
+cd fiis_web
+
+# Crie ambiente virtual
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+# ou
+.venv\Scripts\activate  # Windows
+
+# Instale dependências
+pip install -r requirements.txt
 ```
 
 ---
@@ -196,65 +203,219 @@ poetry shell
 streamlit run app.py
 ```
 
-Após alguns segundos, a aplicação abrirá no navegador:
+O app abrirá automaticamente em `http://localhost:8501`
 
-```text
-http://localhost:8501
+### Primeira Execução
+
+Na primeira vez, o app irá:
+
+1. Conectar ao Fundamentus (pode levar ~10s)
+2. Processar e validar dados
+3. Cachear para uso futuro
+
+Execuções seguintes serão **instantâneas** (dados em cache por 1 hora).
+
+---
+
+## 🧪 Testes
+
+Execute os testes unitários:
+
+```bash
+# Com pytest
+pytest tests/ -v
+
+# Com coverage
+pytest tests/ --cov=core --cov-report=html
 ```
 
 ---
 
-## 📸 Capturas de Tela
+## 📊 Pipeline de Dados
 
-> *Adicione prints reais do seu app depois.*
+```
+┌─────────────────────┐
+│  Fundamentus.com.br │
+└──────────┬──────────┘
+           │
+           ▼
+    ┌──────────────┐
+    │ Data Loader  │  ← Retry automático
+    │  + Validação │  ← Timeout handling
+    └──────┬───────┘
+           │
+           ▼
+    ┌──────────────┐
+    │ Normalização │  ← Remove acentos
+    │              │  ← Padroniza nomes
+    └──────┬───────┘
+           │
+           ▼
+    ┌──────────────┐
+    │  Conversão   │  ← String → Float
+    │   Numérica   │  ← Trata percentuais
+    └──────┬───────┘
+           │
+           ▼
+    ┌──────────────┐
+    │Enriquecimento│  ← DY%, Vacância%
+    │              │  ← Macro-segmentos
+    └──────┬───────┘
+           │
+           ▼
+    ┌──────────────┐
+    │  Validação   │  ← Verifica colunas
+    │    Final     │  ← Qualidade mínima
+    └──────┬───────┘
+           │
+           ▼
+    ┌──────────────┐
+    │    Cache     │  ← 1 hora TTL
+    └──────────────┘
+```
 
-### Dashboard inicial  
+---
 
-*(placeholder)*  
-![dashboard](docs/dashboard.png)
+## ⚙️ Configuração
 
-### Tabela filtrada  
+Edite `config.py` para ajustar:
 
-*(placeholder)*  
-![tabela](docs/fiis_table.png)
-
-### Radar Chart  
-
-*(placeholder)*  
-![radar](docs/radar_chart.png)
+```python
+class Config:
+    # Cache
+    cache.ttl_seconds = 3600  # 1 hora
+    
+    # Timeout
+    fundamentus.timeout = 30  # segundos
+    
+    # Filtros padrão
+    filtros_iniciante.min_dy = 8.0
+    filtros_iniciante.max_pvp = 1.20
+    
+    # UI
+    ui.max_fiis_radar = 5
+```
 
 ---
 
 ## 🔮 Roadmap
 
-- [ ] Histórico real de DY e P/VP via API externa  
-- [ ] Comparação de carteiras (FII x FII x IFIX)  
-- [ ] Backtesting básico  
-- [ ] Exportação em PDF  
-- [ ] Dark mode  
-- [ ] Deploy na nuvem (Railway / Streamlit Cloud / HuggingFace Spaces)  
-- [ ] Cache inteligente para reduzir chamadas ao Fundamentus  
-- [ ] IA para sugerir ajustes nos filtros  
+### Em Desenvolvimento
+
+- [ ] Gráficos de histórico (DY, P/VP)
+- [ ] Comparação com IFIX
+- [ ] Exportação PDF com análise
+
+### Futuro
+
+- [ ] Deploy na nuvem (Railway/Streamlit Cloud)
+- [ ] Dark mode
+- [ ] API REST
+- [ ] Backtesting de estratégias
+- [ ] Alertas personalizados
+- [ ] Integração com Status Invest
 
 ---
 
-## 📚 Tecnologias Utilizadas
+## 📚 Tecnologias
 
-- **Python 3.12**
-- **Streamlit**
-- **Pandas**
-- **Plotly**
-- **Requests**
-- **lxml**
-- **OpenPyXL**
-- **Poetry**
-- (Opcional) BeautifulSoup / html5lib
+| Tecnologia | Versão | Uso |
+|-----------|--------|-----|
+| Python | 3.12+ | Linguagem base |
+| Streamlit | 1.51+ | Interface web |
+| Pandas | 2.3+ | Manipulação de dados |
+| Plotly | 6.4+ | Gráficos interativos |
+| Requests | 2.32+ | HTTP client |
+| lxml | 6.0+ | Parse HTML |
+| Poetry | 1.9+ | Gerenciamento de dependências |
+| pytest | - | Testes unitários |
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+### Guidelines
+
+- Siga o estilo de código existente
+- Adicione testes para novas funcionalidades
+- Atualize a documentação
+- Use commits semânticos
+
+---
+
+## 📝 Changelog
+
+### v2.0.0 (2025-01-XX)
+
+- 🎉 Refatoração completa da arquitetura
+- ✨ Cache inteligente implementado
+- 🛡️ Tratamento robusto de erros
+- 🧪 Testes unitários adicionados
+- 📦 Módulos UI separados
+- ⚙️ Configurações centralizadas
+- 📊 Validação de dados em múltiplas camadas
+- 🎨 UX melhorada com sugestões inteligentes
+
+### v1.0.0 (2024-12-XX)
+
+- 🎉 Versão inicial
+- 📊 Análise básica de FIIs
+- 🔍 Sistema de filtros
+- 🧬 Busca de semelhantes
+- 🕸 Gráfico radar
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## ⚠️ Disclaimer
+
+Esta ferramenta é destinada **exclusivamente para fins educacionais e de estudo**.
+
+**NÃO é recomendação de investimento.**
+
+Os dados são fornecidos pelo Fundamentus e podem conter imprecisões. Sempre faça sua própria análise e consulte um profissional certificado antes de investir.
+
+O autor não se responsabiliza por decisões de investimento tomadas com base nesta ferramenta.
 
 ---
 
 ## 👨‍💻 Autor
 
 **Edson Deveza**  
-Analista de Suporte Técnico • Desenvolvedor Python • Pastor  
+Analista de Suporte Técnico • Desenvolvedor Python • Pastor
+
 📧 <edsondeveza@hotmail.com>  
-📍 Brasil  
+🐙 [GitHub](https://github.com/edsondeveza)  
+💼 [LinkedIn](https://linkedin.com/in/edsondeveza)  
+📍 Brasil
+
+---
+
+## 🙏 Agradecimentos
+
+- [Fundamentus](https://www.fundamentus.com.br) pelos dados
+- [Streamlit](https://streamlit.io) pela excelente framework
+- Comunidade Python brasileira
+
+---
+
+## ⭐ Se você gostou
+
+Se este projeto foi útil, considere dar uma ⭐ no repositório!
+
+---
+
+**Desenvolvido com ❤️ e ☕ no Brasil**

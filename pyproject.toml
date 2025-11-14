@@ -15,7 +15,9 @@ dependencies = [
     "matplotlib >=3.10.7,<4.0.0",
     "requests >=2.32.5,<3.0.0",
     "lxml >=6.0.2,<7.0.0",
-    "plotly (>=6.4.0,<7.0.0)"
+    "plotly (>=6.4.0,<7.0.0)",
+    "numpy (>=2.3.4,<3.0.0)",
+    "pytest (>=9.0.1,<10.0.0)"
     
 
 ]
@@ -32,3 +34,7 @@ package-mode = false
 [tool.poetry.group.dev.dependencies]
 black = "^24.0.0"
 isort = "^5.13.0"
+pytest = "^9.0.1"
+pytest-cov = "^7.0.0"
+flake8 = "^7.3.0"
+mypy = "^1.18.2"

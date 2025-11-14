@@ -189,6 +189,7 @@ def criar_percentuais(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+
 def adicionar_macro_segmento(df: pd.DataFrame) -> pd.DataFrame:
     """
     Cria uma coluna 'macro_segmento' com categorias mais gerais:
@@ -203,6 +204,8 @@ def adicionar_macro_segmento(df: pd.DataFrame) -> pd.DataFrame:
 
     def classificar(seg: Any) -> str:
         s = str(seg).lower()
+        # Remove acentos para comparação
+        s = _remover_acentos(s)  # Adicionar esta linha!
 
         if any(x in s for x in ["papel", "cri", "receb"]):
             return "Papéis / CRI"
