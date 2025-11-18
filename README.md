@@ -395,11 +395,11 @@ O autor não se responsabiliza por decisões de investimento tomadas com base ne
 ## 👨‍💻 Autor
 
 **Edson Deveza**  
-Analista de Suporte Técnico • Desenvolvedor Python • Pastor
+Analista de Suporte Técnico • Estudante de Análise de Dados e Python 
 
 📧 <edsondeveza@hotmail.com>  
 🐙 [GitHub](https://github.com/edsondeveza)  
-💼 [LinkedIn](https://linkedin.com/in/edsondeveza)  
+💼 [LinkedIn](https://linkedin.com/in/edson-deveza)  
 📍 Brasil
 
 ---
