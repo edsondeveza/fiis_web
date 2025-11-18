@@ -1,0 +1,19 @@
+[server]
+runOnSave = true
+
+[global]
+useWatcher = "watchdog"
+
+[runner]
+fastReruns = true
+
+[theme]
+primaryColor="#0055A4"             # Azul confiança
+backgroundColor="#F7F9FC"          # Cinza gelo elegante
+secondaryBackgroundColor="#FFFFFF" # Cards claros
+textColor="#1A1A1A"                # Preto suave
+font="sans serif"
+
+
+
+

@@ -29,8 +29,6 @@ __pycache__/
 # ---- LOGS ----
 *.log
 
-# ---- STREAMLIT ----
-.streamlit/
 
 # ---- TEMPORÁRIOS ----
 *.tmp
